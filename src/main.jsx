@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import SprintDetails from './pages/SprintDetails'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Toaster } from 'sonner'
+import './App.css'
 
 const router = createBrowserRouter([
   {
