@@ -1,0 +1,58 @@
+{
+  "sprints": [
+    {
+      "id": 1,
+      "title": "Criar sistema de tarefas",
+      "startDate": "10/05/2026",
+      "endDate": "10/06/2026",
+      "status": "pending",
+      "description": "Criar sistema de tarefas baseado em sprints e tarefas"
+    },
+    {
+      "id": 2,
+      "title": "Configurar o db.json",
+      "startDate": "10/05/2026",
+      "endDate": "17/06/2026",
+      "status": "done",
+      "description": "Criar db.json para simular api"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "sprintId": 1,
+      "title": "Criar UI do sistema de tarefas",
+      "status": "pending",
+      "priority": "high",
+      "description": "Criar interface da pagina inicial sistema de tarefas",
+      "time": "morning"
+    },
+    {
+      "id": 2,
+      "sprintId": 1,
+      "title": "Configurar banco",
+      "status": "pending",
+      "priority": "high",
+      "description": "Configurar o banco de dados do sistema de tarefas",
+      "time": "afternoon"
+    },
+    {
+      "id": 3,
+      "sprintId": 2,
+      "title": "Criar db",
+      "status": "in-progress",
+      "priority": "medium",
+      "description": "Configurar o banco de dados a partir do json-server",
+      "time": "afternoon"
+    },
+    {
+      "id": 4,
+      "sprintId": 2,
+      "title": "Criar baseURL",
+      "status": "pending",
+      "priority": "high",
+      "description": "Configurar a url base da api usando json-server",
+      "time": "evening"
+    }
+  ]
+}
