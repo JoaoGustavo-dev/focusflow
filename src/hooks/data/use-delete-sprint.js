@@ -14,7 +14,9 @@ export const useDeleteSprint = (sprintId) => {
     },
     onSuccess: () => {
       queryClient.setQueryData(queryKeys.getAllSprints(), (oldSprints) => {
-        return oldSprints.filter((sprint) => sprint.id !== sprintId)
+        const sprintList = oldSprints ?? []
+
+        return sprintList.filter((sprint) => sprint.id !== sprintId)
       })
 
       queryClient.removeQueries({ queryKey: queryKeys.getOneSprint(sprintId) })

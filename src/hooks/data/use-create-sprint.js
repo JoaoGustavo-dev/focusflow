@@ -13,10 +13,11 @@ export const useCreateSprint = () => {
       return createdSprint
     },
     onSuccess: (createdSprint) => {
-      queryClient.setQueryData(queryKeys.getAllSprints(), (oldSprints) => [
-        ...oldSprints,
-        createdSprint,
-      ])
+      queryClient.setQueryData(queryKeys.getAllSprints(), (oldSprints) => {
+        const sprintList = oldSprints ?? []
+
+        return [...sprintList, createdSprint]
+      })
     },
   })
 }
