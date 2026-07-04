@@ -20,6 +20,8 @@
   --color-low-priority: #3d9e5f;
   --color-medium-priority: #e6a817;
   --color-high-priority: #e05252;
+  --color-smooth-blue: #4cd9e2;
+  --color-sidebar-description: #c4c7c5;
 }
 
 @layer base {
