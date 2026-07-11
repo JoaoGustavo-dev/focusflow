@@ -1,13 +1,10 @@
 import { useQuery } from '@tanstack/react-query'
 import { queryKeys } from '../../keys/queryKeys'
-import { api } from '../../lib/axios'
+import { getSprint } from '../../service/sprintService'
 
 export const useGetSprint = (sprintId) => {
   return useQuery({
     queryKey: queryKeys.getOneSprint(sprintId),
-    queryFn: async () => {
-      const { data: tasks } = await api.get(`/sprints/${sprintId}/tasks`)
-      return tasks
-    },
+    queryFn: () => getSprint(sprintId),
   })
 }

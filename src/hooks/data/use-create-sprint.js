@@ -1,17 +1,14 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { mutationKeys } from '../../keys/mutationKeys'
-import { api } from '../../lib/axios'
 import { queryKeys } from '../../keys/queryKeys'
+import { createSprint } from '../../service/sprintService'
 
 export const useCreateSprint = () => {
   const queryClient = useQueryClient()
 
   return useMutation({
     mutationKey: mutationKeys.addSprint(),
-    mutationFn: async (sprint) => {
-      const { data: createdSprint } = await api.post('/sprints', sprint)
-      return createdSprint
-    },
+    mutationFn: (sprint) => createSprint(sprint),
     onSuccess: (createdSprint) => {
       queryClient.setQueryData(queryKeys.getAllSprints(), (oldSprints) => {
         const sprintList = oldSprints ?? []
