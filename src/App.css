@@ -22,6 +22,7 @@
   --color-high-priority: #e05252;
   --color-smooth-blue: #4cd9e2;
   --color-sidebar-description: #c4c7c5;
+  --color-surface-selected: #2a2a2a;
 }
 
 @layer base {
