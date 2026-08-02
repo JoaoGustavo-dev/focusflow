@@ -14,7 +14,7 @@ const Sidebar = () => {
           </p>
         </div>
 
-        <div>
+        <div className="flex flex-col items-center">
           <SidebarButton to="/">
             <DashboardIcon />
             Dashboard

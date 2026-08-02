@@ -6,19 +6,25 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Toaster } from 'sonner'
 import './App.css'
 import Sprints from './pages/Sprints'
+import Layout from './layouts/Layout'
 
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <Home />,
-  },
-  {
-    path: '/sprints',
-    element: <Sprints />,
-  },
-  {
-    path: '/sprints/:sprintId',
-    element: <SprintDetails />,
+    element: <Layout />,
+    children: [
+      {
+        path: '/',
+        element: <Home />,
+      },
+      {
+        path: '/sprints',
+        element: <Sprints />,
+      },
+      {
+        path: '/sprints/:sprintId',
+        element: <SprintDetails />,
+      },
+    ],
   },
 ])
 
