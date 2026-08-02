@@ -5,11 +5,16 @@ import SprintDetails from './pages/SprintDetails'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Toaster } from 'sonner'
 import './App.css'
+import Sprints from './pages/Sprints'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Home />,
+  },
+  {
+    path: '/sprints',
+    element: <Sprints />,
   },
   {
     path: '/sprints/:sprintId',
