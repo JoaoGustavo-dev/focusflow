@@ -1,8 +1,9 @@
 import Header from '../components/Header'
+import SprintCards from '../components/SprintCards'
 
 const Home = () => {
   return (
-    <div className="flex max-w-226.25 flex-col gap-10 px-0.5 py-8">
+    <div className="mr-14 flex flex-col gap-10 px-0.5 py-8">
       {/* Header */}
       <div>
         <Header
@@ -12,6 +13,7 @@ const Home = () => {
       </div>
 
       {/* Sprint Cards */}
+      <SprintCards />
     </div>
   )
 }
