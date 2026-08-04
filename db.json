@@ -15,6 +15,30 @@
       "endDate": "17/06/2026",
       "status": "done",
       "description": "Criar db.json para simular api"
+    },
+    {
+      "id": 3,
+      "title": "Autenticação de usuários",
+      "startDate": "18/06/2026",
+      "endDate": "30/08/2026",
+      "status": "in-progress",
+      "description": "Implementar login, cadastro e recuperação de senha"
+    },
+    {
+      "id": 4,
+      "title": "Dashboard e relatórios",
+      "startDate": "03/07/2026",
+      "endDate": "20/08/2026",
+      "status": "pending",
+      "description": "Criar dashboard com gráficos de progresso das sprints"
+    },
+    {
+      "id": 5,
+      "title": "Ajustes de responsividade",
+      "startDate": "21/07/2026",
+      "endDate": "05/08/2026",
+      "status": "pending",
+      "description": "Adaptar layout para telas mobile e tablet"
     }
   ],
   "tasks": [
@@ -52,6 +76,132 @@
       "status": "pending",
       "priority": "high",
       "description": "Configurar a url base da api usando json-server",
+      "time": "evening"
+    },
+    {
+      "id": 5,
+      "sprintId": 1,
+      "title": "Criar componente de card de tarefa",
+      "status": "done",
+      "priority": "medium",
+      "description": "Componente reutilizável para exibir cada tarefa na listagem",
+      "time": "morning"
+    },
+    {
+      "id": 6,
+      "sprintId": 1,
+      "title": "Criar filtro por status",
+      "status": "pending",
+      "priority": "low",
+      "description": "Permitir filtrar tarefas por pending, in-progress e done",
+      "time": "afternoon"
+    },
+    {
+      "id": 7,
+      "sprintId": 2,
+      "title": "Popular db.json com dados fake",
+      "status": "done",
+      "priority": "low",
+      "description": "Adicionar registros de exemplo para sprints e tasks",
+      "time": "morning"
+    },
+    {
+      "id": 8,
+      "sprintId": 2,
+      "title": "Configurar CORS no json-server",
+      "status": "pending",
+      "priority": "medium",
+      "description": "Garantir que o front-end consiga consumir a api sem bloqueios",
+      "time": "evening"
+    },
+    {
+      "id": 9,
+      "sprintId": 3,
+      "title": "Criar tela de login",
+      "status": "in-progress",
+      "priority": "high",
+      "description": "Formulário de login com validação de campos",
+      "time": "morning"
+    },
+    {
+      "id": 10,
+      "sprintId": 3,
+      "title": "Criar tela de cadastro",
+      "status": "pending",
+      "priority": "high",
+      "description": "Formulário de cadastro de novo usuário",
+      "time": "afternoon"
+    },
+    {
+      "id": 11,
+      "sprintId": 3,
+      "title": "Implementar recuperação de senha",
+      "status": "pending",
+      "priority": "medium",
+      "description": "Fluxo de envio de email para redefinição de senha",
+      "time": "evening"
+    },
+    {
+      "id": 12,
+      "sprintId": 3,
+      "title": "Persistir token no localStorage",
+      "status": "pending",
+      "priority": "medium",
+      "description": "Guardar token de autenticação e usar em requisições protegidas",
+      "time": "afternoon"
+    },
+    {
+      "id": 13,
+      "sprintId": 4,
+      "title": "Criar gráfico de progresso por sprint",
+      "status": "pending",
+      "priority": "medium",
+      "description": "Gráfico de barras mostrando tarefas concluídas por sprint",
+      "time": "morning"
+    },
+    {
+      "id": 14,
+      "sprintId": 4,
+      "title": "Criar cards de resumo (KPIs)",
+      "status": "pending",
+      "priority": "low",
+      "description": "Cards com total de tarefas, pendentes, em andamento e concluídas",
+      "time": "afternoon"
+    },
+    {
+      "id": 15,
+      "sprintId": 4,
+      "title": "Exportar relatório em PDF",
+      "status": "pending",
+      "priority": "low",
+      "description": "Botão para exportar o dashboard como PDF",
+      "time": "evening"
+    },
+    {
+      "id": 16,
+      "sprintId": 5,
+      "title": "Ajustar menu para mobile",
+      "status": "pending",
+      "priority": "medium",
+      "description": "Transformar menu lateral em menu hambúrguer em telas pequenas",
+      "time": "morning"
+    },
+    {
+      "id": 17,
+      "sprintId": 5,
+      "title": "Testar em diferentes resoluções",
+      "status": "pending",
+      "priority": "low",
+      "description": "Validar layout em breakpoints comuns (mobile, tablet, desktop)",
+      "time": "afternoon"
+    },
+    {
+      "id": 18,
+      "sprintId": 5,
+      "title": "Corrigir overflow em tabelas",
+      "status": "pending",
+      "priority": "medium",
+      "description": "Adicionar scroll horizontal em tabelas dentro de telas menores",
       "time": "evening"
     }
   ]

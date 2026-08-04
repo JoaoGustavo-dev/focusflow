@@ -31,7 +31,7 @@ const SprintCards = () => {
         title="Total Tasks"
         icon={<TotalTasksIcon />}
         number={tasks?.length}
-        bg="bg-white"
+        bg="bg-background"
         progress={totalActiveTasks}
       />
       <SprintCard
