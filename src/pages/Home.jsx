@@ -1,5 +1,5 @@
 import Header from '../components/Header'
-import SprintCards from '../components/SprintCards'
+import StatCards from '../components/StatCards'
 
 const Home = () => {
   return (
@@ -13,7 +13,7 @@ const Home = () => {
       </div>
 
       {/* Sprint Cards */}
-      <SprintCards />
+      <StatCards />
     </div>
   )
 }

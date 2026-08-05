@@ -1,11 +1,12 @@
-import SprintCard from './SprintCard'
+import StatCard from './StatCard'
 import TotalTasksIcon from '../assets/icons/totalTasks.svg?react'
 import { useGetTasks } from '../hooks/data/use-get-tasks'
 import SprintsIcon from '../assets/icons/sprints.svg?react'
 import { useGetSprints } from '../hooks/data/use-get-sprints'
 import CompletedIcon from '../assets/icons/completed.svg?react'
+import { statusVariants } from '../utils/statusVariants'
 
-const SprintCards = () => {
+const StatCards = () => {
   const { data: tasks } = useGetTasks()
   const { data: sprints } = useGetSprints()
 
@@ -27,36 +28,40 @@ const SprintCards = () => {
 
   return (
     <div className="grid grid-cols-4 gap-4">
-      <SprintCard
+      <StatCard
         title="Total Tasks"
         icon={<TotalTasksIcon />}
         number={tasks?.length}
-        bg="bg-background"
+        color={statusVariants.pending}
+        size="sm"
         progress={totalActiveTasks}
       />
-      <SprintCard
+      <StatCard
         title="Active Sprints"
         icon={<SprintsIcon />}
         number={activeSprints}
-        bg="bg-primary-status"
+        color={statusVariants['in-progress']}
+        size="sm"
         progress={totalActiveSprints}
       />
-      <SprintCard
+      <StatCard
         title="Completed Sprints"
         icon={<CompletedIcon />}
         number={completedSprints}
-        bg="bg-smooth-blue"
+        color={statusVariants.done}
+        size="sm"
         progress={totalCompletedSprints}
       />
-      <SprintCard
+      <StatCard
         title="Completed Tasks"
         icon={<CompletedIcon />}
         number={completedTasks}
-        bg="bg-smooth-blue"
+        color={statusVariants.done}
+        size="sm"
         progress={totalTasksProgress}
       />
     </div>
   )
 }
 
-export default SprintCards
+export default StatCards
