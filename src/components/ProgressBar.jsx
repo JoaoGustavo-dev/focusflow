@@ -11,7 +11,7 @@ const progressStyles = tv({
       md: { track: 'h-2', fill: 'h-2' },
     },
     color: {
-      active: { fill: 'bg-primary-status' },
+      active: { fill: 'bg-in-progress-status' },
       done: { fill: 'bg-done-status' },
       neutral: { fill: 'bg-background' },
     },
