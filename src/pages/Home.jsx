@@ -1,3 +1,4 @@
+import ActiveSprintCards from '../components/ActiveSprintCards'
 import Header from '../components/Header'
 import StatCards from '../components/StatCards'
 
@@ -12,8 +13,11 @@ const Home = () => {
         />
       </div>
 
-      {/* Sprint Cards */}
+      {/* Dashboard Cards */}
       <StatCards />
+
+      {/* Active Sprint Cards */}
+      <ActiveSprintCards />
     </div>
   )
 }

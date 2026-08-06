@@ -9,7 +9,6 @@ const ActiveSprintCard = ({
   badgeTitle,
   endDays,
   progress,
-  progressBarColor,
   progressBarSize,
   totalTasks,
   completedTasks,
@@ -36,7 +35,7 @@ const ActiveSprintCard = ({
         </div>
         <ProgressBar
           progress={progress}
-          color={progressBarColor}
+          color={status}
           size={progressBarSize}
         />
       </div>
