@@ -77,7 +77,7 @@ const ActiveSprintCards = () => {
       </div>
       {activeSprintsInformation?.length === 0 ? (
         <div className="mt-5 flex justify-center">
-          <p className="text-main text-4xl">Nenhuma Sprint Ativa no momento!</p>
+          <p className="text-main text-4xl">No active sprints yet!</p>
         </div>
       ) : (
         <div
