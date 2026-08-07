@@ -16,7 +16,7 @@ const ActiveSprintCard = ({
   return (
     <Card>
       <div className="flex justify-between">
-        <div>
+        <div className="flex flex-col gap-1.5">
           <CardTitle title={title} className="text-main text-lg" />
           <StatusBadge status={status} title={badgeTitle} />
         </div>
@@ -28,10 +28,10 @@ const ActiveSprintCard = ({
         </div>
       </div>
 
-      <div>
+      <div className="flex flex-col gap-2">
         <div className="flex justify-between">
           <p className="text-secondary text-[11px]">Progress</p>
-          <p className="text-main text-[11px]">{progress}%</p>
+          <p className="text-main text-[11px]">{Math.round(progress)}%</p>
         </div>
         <ProgressBar
           progress={progress}
