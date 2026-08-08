@@ -5,9 +5,9 @@ import StatusBadge from './StatusBadge'
 const TaskPriorityCard = ({ title, sprintName, badgeTitle, status }) => {
   return (
     <Card>
-      <div className="flex justify-between">
-        <div>
-          <CardTitle title={title} className="text-base" />
+      <div className="flex justify-between gap-4">
+        <div className="min-w-0">
+          <CardTitle title={title} className="text-main text-base" />
           <p className="text-secondary text-base">Sprint: {sprintName}</p>
         </div>
 
