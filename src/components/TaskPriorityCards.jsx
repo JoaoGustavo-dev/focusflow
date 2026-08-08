@@ -17,16 +17,20 @@ const TaskPriorityCards = () => {
 
   const tasksWithSprintInfo = highPriorityTasks?.map((task) => {
     const sprintsTask = sprints?.find(
-      (sprint) => Number(sprint.id) === task.sprintId
+      (sprint) => Number(sprint?.id) === task?.sprintId
     )
 
-    const sprintEnd = sprintsTask.endDate
+    if (sprintsTask === undefined) {
+      return null
+    }
+
+    const sprintEnd = sprintsTask?.endDate
 
     const sprintEndParsed = parseDate(sprintEnd)
 
     const endDaysLeft = sprintEndParsed - actualDate
 
-    const sprintName = sprintsTask.title
+    const sprintName = sprintsTask?.title
 
     return {
       ...task,
@@ -35,16 +39,22 @@ const TaskPriorityCards = () => {
     }
   })
 
-  const sortedHighPriorityTasks = tasksWithSprintInfo?.sort((taskA, taskB) => {
-    if (taskA.status === 'in-progress') {
-      return -1
-    }
-    if (taskB.status === 'in-progress') {
-      return 1
-    }
+  const filteredTasksWithSprintInfo = tasksWithSprintInfo?.filter(
+    (task) => task !== null
+  )
 
-    return taskA.endDays - taskB.endDays
-  })
+  const sortedHighPriorityTasks = filteredTasksWithSprintInfo?.sort(
+    (taskA, taskB) => {
+      if (taskA.status === 'in-progress') {
+        return -1
+      }
+      if (taskB.status === 'in-progress') {
+        return 1
+      }
+
+      return taskA.endDays - taskB.endDays
+    }
+  )
 
   const selectedTasks = sortedHighPriorityTasks?.slice(0, 3)
 
