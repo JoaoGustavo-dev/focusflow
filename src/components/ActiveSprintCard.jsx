@@ -16,11 +16,11 @@ const ActiveSprintCard = ({
   return (
     <Card>
       <div className="flex justify-between">
-        <div className="flex flex-col gap-1.5">
+        <div className="flex min-w-0 flex-col items-start gap-1.5">
           <CardTitle title={title} className="text-main text-lg" />
           <StatusBadge status={status} title={badgeTitle} />
         </div>
-        <div className="flex flex-col items-end">
+        <div className="flex shrink-0 flex-col items-end">
           <p className="text-secondary text-base">Ending in</p>
           <p className="text-main text-base">
             {endDays === 0 ? 'Last day' : `${endDays} days left`}

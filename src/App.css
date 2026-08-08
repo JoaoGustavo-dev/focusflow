@@ -1,5 +1,14 @@
 @import 'tailwindcss';
 
+.home::-webkit-scrollbar {
+  background-color: transparent;
+  width: 8px;
+}
+.home::-webkit-scrollbar-thumb {
+  background-color: #a0a0a0;
+  border-radius: 16px;
+}
+
 @theme {
   --font-display: 'Syne', 'sans-serif';
   --font-body: 'Inter', 'sans-serif';
