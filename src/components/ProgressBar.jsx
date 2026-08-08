@@ -13,7 +13,7 @@ const progressStyles = tv({
     color: {
       active: { fill: 'bg-in-progress-status' },
       done: { fill: 'bg-done-status' },
-      neutral: { fill: 'bg-background' },
+      neutral: { fill: 'bg-main' },
     },
   },
 })
