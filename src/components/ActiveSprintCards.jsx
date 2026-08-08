@@ -1,5 +1,6 @@
 import { useGetSprints } from '../hooks/data/use-get-sprints'
 import { useGetTasks } from '../hooks/data/use-get-tasks'
+import { parseDate } from '../utils/parseDate'
 import { statusLabels } from '../utils/statusLabels'
 import { statusVariants } from '../utils/statusVariants'
 import ActiveSprintCard from './ActiveSprintCard'
@@ -10,14 +11,6 @@ const ActiveSprintCards = () => {
   const { data: sprints } = useGetSprints()
 
   const activeSprints = sprints?.filter((sprint) => sprint.status !== 'done')
-
-  const parseDate = (date) => {
-    const splitdate = date.split('/')
-
-    const parsedDate = new Date(splitdate[2], splitdate[1] - 1, splitdate[0])
-
-    return parsedDate
-  }
 
   const actualDate = new Date()
 
