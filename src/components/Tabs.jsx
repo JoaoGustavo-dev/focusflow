@@ -1,11 +1,13 @@
-const tabOptions = ['All', 'Pending', 'In-progress', 'Done']
+import { statusTranslations } from '../utils/statusTranslations'
 
 const Tabs = ({ activeOption, filterFunction }) => {
+  const translations = Object.entries(statusTranslations)
+
   return (
     <div className="bg-high-surface border-border flex self-start border p-1">
-      {tabOptions.map((option) => {
+      {translations.map(([value, label]) => {
         const isActive = () => {
-          if (activeOption === option) {
+          if (activeOption === value) {
             return 'text-main bg-disabled'
           }
 
@@ -14,11 +16,11 @@ const Tabs = ({ activeOption, filterFunction }) => {
 
         return (
           <button
-            key={option}
-            onClick={() => filterFunction(option)}
+            key={value}
+            onClick={() => filterFunction(value)}
             className={`rounded-sm px-4 py-1.5 hover:cursor-pointer ${isActive()}`}
           >
-            {option}
+            {label}
           </button>
         )
       })}

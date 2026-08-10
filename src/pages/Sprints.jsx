@@ -5,7 +5,7 @@ import Tabs from '../components/Tabs'
 import { useState } from 'react'
 
 const Sprints = () => {
-  const [active, setActive] = useState('All')
+  const [active, setActive] = useState('all')
 
   return (
     <div className="flex flex-col gap-6 p-10">
