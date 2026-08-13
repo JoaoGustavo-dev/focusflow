@@ -34,9 +34,9 @@ const ActiveSprintCards = () => {
 
     const doneTasks = sprintTasks?.filter((task) => task.status === 'done')
 
-    const totalTasks = sprintTasks.length
+    const totalTasks = sprintTasks?.length
 
-    const completedTasks = doneTasks.length
+    const completedTasks = doneTasks?.length
 
     const taskProgress =
       totalTasks > 0 ? (completedTasks / totalTasks) * 100 : 0

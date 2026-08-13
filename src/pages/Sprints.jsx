@@ -3,6 +3,7 @@ import Button from '../components/Button'
 import PlusIcon from '../assets/icons/plus.svg?react'
 import Tabs from '../components/Tabs'
 import { useState } from 'react'
+import SprintCards from '../components/SprintCards'
 
 const Sprints = () => {
   const [active, setActive] = useState('all')
@@ -18,6 +19,8 @@ const Sprints = () => {
       </div>
 
       <Tabs activeOption={active} filterFunction={setActive} />
+
+      <SprintCards activefilter={active} />
     </div>
   )
 }
