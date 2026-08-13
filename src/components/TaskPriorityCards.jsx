@@ -4,6 +4,7 @@ import { parseDate } from '../utils/parseDate'
 import TaskPriorityCard from './TaskPriorityCard'
 import { statusVariants } from '../utils/statusVariants'
 import { statusLabels } from '../utils/statusLabels'
+import EmptyMessage from './EmptyMessage'
 
 const TaskPriorityCards = () => {
   const { data: tasks } = useGetTasks()
@@ -62,9 +63,10 @@ const TaskPriorityCards = () => {
     <div className="flex flex-col gap-2">
       <p className="font-display text-main text-2xl">High Priority Tasks</p>
       {selectedTasks?.length === 0 ? (
-        <p className="text-main mt-4 text-center text-2xl">
-          No high priority tasks at the moment!
-        </p>
+        <EmptyMessage
+          className="mt-4 text-center"
+          message="No high priority tasks at the moment!"
+        />
       ) : (
         selectedTasks?.map((task) => {
           return (

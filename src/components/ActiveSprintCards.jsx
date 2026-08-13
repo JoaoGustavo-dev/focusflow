@@ -5,6 +5,7 @@ import { statusLabels } from '../utils/statusLabels'
 import { statusVariants } from '../utils/statusVariants'
 import ActiveSprintCard from './ActiveSprintCard'
 import { NavLink } from 'react-router-dom'
+import EmptyMessage from './EmptyMessage'
 
 const ActiveSprintCards = () => {
   const { data: tasks } = useGetTasks()
@@ -70,7 +71,7 @@ const ActiveSprintCards = () => {
       </div>
       {activeSprintsInformation?.length === 0 ? (
         <div className="mt-5 flex justify-center">
-          <p className="text-main text-4xl">No active sprints yet!</p>
+          <EmptyMessage message="No active sprints yet!" />
         </div>
       ) : (
         <div

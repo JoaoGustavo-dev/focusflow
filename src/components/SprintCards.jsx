@@ -7,6 +7,7 @@ import { useGetTasks } from '../hooks/data/use-get-tasks'
 import EmptyState from './EmptyState'
 import SprintsIcon from '../assets/icons/sprints.svg?react'
 import { Fragment } from 'react'
+import EmptyMessage from './EmptyMessage'
 
 const SprintCards = ({ activefilter }) => {
   const { data: sprints } = useGetSprints()
@@ -40,11 +41,14 @@ const SprintCards = ({ activefilter }) => {
     }
   })
 
+  const emptyDB = sprints?.length === 0
+  const emptyFilter = sprintsList?.length === 0 && !emptyDB
+
   return (
     <div
-      className={`${sprintsList?.length === 0 ? 'flex items-center justify-center' : 'grid grid-cols-3 gap-4'}`}
+      className={`${emptyDB ? 'flex items-center justify-center' : emptyFilter ? 'flex items-center justify-center' : 'grid grid-cols-3 gap-4'}`}
     >
-      {sprintsList?.length === 0 ? (
+      {emptyDB ? (
         <EmptyState
           icon={<SprintsIcon width="48px" height="48px" />}
           title="No sprints found"
@@ -54,6 +58,10 @@ const SprintCards = ({ activefilter }) => {
               <PlusIcon /> Create your first sprint
             </Fragment>
           }
+        />
+      ) : emptyFilter ? (
+        <EmptyMessage
+          message={`No sprints found with the ${statusLabels[activefilter]} status!`}
         />
       ) : (
         <Fragment>
