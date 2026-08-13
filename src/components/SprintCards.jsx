@@ -4,6 +4,9 @@ import PlusIcon from '../assets/icons/plus.svg?react'
 import { statusLabels } from '../utils/statusLabels'
 import { statusVariants } from '../utils/statusVariants'
 import { useGetTasks } from '../hooks/data/use-get-tasks'
+import EmptyState from './EmptyState'
+import SprintsIcon from '../assets/icons/sprints.svg?react'
+import { Fragment } from 'react'
 
 const SprintCards = ({ activefilter }) => {
   const { data: sprints } = useGetSprints()
@@ -38,31 +41,48 @@ const SprintCards = ({ activefilter }) => {
   })
 
   return (
-    <div className="grid grid-cols-3 gap-4">
-      {sprintsList?.map((sprint) => {
-        return (
-          <SprintCard
-            key={sprint.id}
-            title={sprint?.title}
-            badgeTitle={statusLabels[sprint?.status]}
-            status={statusVariants[sprint?.status]}
-            subtitle={sprint?.description}
-            startDate={sprint?.startDate}
-            endDate={sprint?.endDate}
-            color={statusVariants[sprint?.status]}
-            size="md"
-            completedTasks={sprint.completedTasks}
-            totalTasks={sprint.totalTasks}
-            progress={sprint.progress}
-          />
-        )
-      })}
-      <div className="bg-main/10 border-border flex h-[233.500px] w-full flex-col items-center justify-center gap-2 rounded-sm border border-dashed">
-        <button className="bg-secondary flex h-12 w-12 items-center justify-center rounded-[50%] hover:cursor-pointer">
-          <PlusIcon />
-        </button>
-        <p className="text-secondary text-sm">Criar Nova Sprint</p>
-      </div>
+    <div
+      className={`${sprintsList?.length === 0 ? 'flex items-center justify-center' : 'grid grid-cols-3 gap-4'}`}
+    >
+      {sprintsList?.length === 0 ? (
+        <EmptyState
+          icon={<SprintsIcon width="48px" height="48px" />}
+          title="No sprints found"
+          subtitle="Start by defining a work cycle for your team."
+          buttonText={
+            <Fragment>
+              <PlusIcon /> Create your first sprint
+            </Fragment>
+          }
+        />
+      ) : (
+        <Fragment>
+          {sprintsList?.map((sprint) => {
+            return (
+              <SprintCard
+                key={sprint?.id}
+                title={sprint?.title}
+                badgeTitle={statusLabels[sprint?.status]}
+                status={statusVariants[sprint?.status]}
+                subtitle={sprint?.description}
+                startDate={sprint?.startDate}
+                endDate={sprint?.endDate}
+                color={statusVariants[sprint?.status]}
+                size="md"
+                completedTasks={sprint?.completedTasks}
+                totalTasks={sprint?.totalTasks}
+                progress={sprint?.progress}
+              />
+            )
+          })}
+          <div className="bg-main/10 border-border flex h-[233.500px] w-full flex-col items-center justify-center gap-2 rounded-sm border border-dashed">
+            <button className="bg-secondary flex h-12 w-12 items-center justify-center rounded-[50%] hover:cursor-pointer">
+              <PlusIcon />
+            </button>
+            <p className="text-secondary text-sm">Create new Sprint</p>
+          </div>
+        </Fragment>
+      )}
     </div>
   )
 }

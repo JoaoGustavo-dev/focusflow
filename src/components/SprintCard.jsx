@@ -37,7 +37,7 @@ const SprintCard = ({
           <p className="text-secondary text-sm">
             {completedTasks}/{totalTasks} tasks
           </p>
-          <p className="text-main text-sm">{progress}%</p>
+          <p className="text-main text-sm">{Math.round(progress)}%</p>
         </div>
         <ProgressBar progress={progress} color={color} size={size} />
       </div>
