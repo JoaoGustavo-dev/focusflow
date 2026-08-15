@@ -8,6 +8,7 @@ import EmptyState from './EmptyState'
 import SprintsIcon from '../assets/icons/sprints.svg?react'
 import { Fragment } from 'react'
 import EmptyMessage from './EmptyMessage'
+import { Link } from 'react-router-dom'
 
 const SprintCards = ({ activefilter }) => {
   const { data: sprints } = useGetSprints()
@@ -67,20 +68,21 @@ const SprintCards = ({ activefilter }) => {
         <Fragment>
           {sprintsList?.map((sprint) => {
             return (
-              <SprintCard
-                key={sprint?.id}
-                title={sprint?.title}
-                badgeTitle={statusLabels[sprint?.status]}
-                status={statusVariants[sprint?.status]}
-                subtitle={sprint?.description}
-                startDate={sprint?.startDate}
-                endDate={sprint?.endDate}
-                color={statusVariants[sprint?.status]}
-                size="md"
-                completedTasks={sprint?.completedTasks}
-                totalTasks={sprint?.totalTasks}
-                progress={sprint?.progress}
-              />
+              <Link to={`/sprints/${sprint?.id}`} key={sprint?.id}>
+                <SprintCard
+                  title={sprint?.title}
+                  badgeTitle={statusLabels[sprint?.status]}
+                  status={statusVariants[sprint?.status]}
+                  subtitle={sprint?.description}
+                  startDate={sprint?.startDate}
+                  endDate={sprint?.endDate}
+                  color={statusVariants[sprint?.status]}
+                  size="md"
+                  completedTasks={sprint?.completedTasks}
+                  totalTasks={sprint?.totalTasks}
+                  progress={sprint?.progress}
+                />
+              </Link>
             )
           })}
           <div className="bg-main/10 border-border flex h-[233.500px] w-full flex-col items-center justify-center gap-2 rounded-sm border border-dashed">
