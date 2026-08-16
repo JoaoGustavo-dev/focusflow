@@ -8,6 +8,7 @@ import Header from '../components/Header'
 import Button from '../components/Button'
 import EditIcon from '../assets/icons/edit.svg?react'
 import ArrowLeftIcon from '../assets/icons/arrow-left.svg?react'
+import SprintStatCards from '../components/SprintStatCards'
 
 const SprintDetails = () => {
   const { sprintId } = useParams()
@@ -43,6 +44,8 @@ const SprintDetails = () => {
           <EditIcon /> Editar sprint
         </Button>
       </div>
+
+      <SprintStatCards id={id} />
     </div>
   )
 }
