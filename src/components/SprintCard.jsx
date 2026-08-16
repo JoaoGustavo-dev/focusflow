@@ -1,8 +1,8 @@
 import ProgressBar from './ProgressBar'
 import StatusBadge from './StatusBadge'
 import CardTitle from './CardTitle'
-import CallendarIcon from '../assets/icons/callendar.svg?react'
 import Card from './Card'
+import DateRange from './DateRange'
 
 const SprintCard = ({
   status,
@@ -26,12 +26,11 @@ const SprintCard = ({
         <CardTitle title={title} className="text-main text-lg" />
         <p className="text-secondary text-sm">{subtitle}</p>
       </div>
-      <div className="border-secondary text-secondary flex items-center gap-2 self-start border-t pt-1">
-        <CallendarIcon />
-        <p>
-          {startDate} - {endDate}
-        </p>
-      </div>
+      <DateRange
+        className="border-secondary border-t pt-1"
+        startDate={startDate}
+        endDate={endDate}
+      />
       <div className="flex flex-col gap-2">
         <div className="flex justify-between">
           <p className="text-secondary text-sm">
