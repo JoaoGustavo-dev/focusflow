@@ -21,11 +21,14 @@ const progressStyles = tv({
 const ProgressBar = ({ progress, color = 'neutral', size = 'sm' }) => {
   const { track, fill } = progressStyles({ size, color })
 
-  return (
+  const validProgress =
+    Number.isFinite(progress) && progress >= 0 && progress <= 100
+
+  return validProgress ? (
     <div className={track()}>
       <div className={fill()} style={{ width: `${progress}%` }} />
     </div>
-  )
+  ) : null
 }
 
 export default ProgressBar
