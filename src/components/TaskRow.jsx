@@ -2,24 +2,45 @@ import PriorityBadge from './PriorityBadge'
 import StatusBadge from './StatusBadge'
 import TaskCheckbox from './TaskCheckbox'
 import TaskTime from './TaskTime'
+import { useUpdateTask } from '../hooks/data/use-update-task'
+import { nextTaskStatus } from '../utils/nextTaskStatus'
+import { toast } from 'sonner'
 
 const TaskRow = ({
   title,
   description,
   status,
-  checkboxId,
-  checkboxOnToggle,
+  sprintId,
+  taskId,
   priority,
   priorityBadgeTitle,
   statusBadgeTitle,
   time,
 }) => {
+  const { mutate } = useUpdateTask(sprintId, taskId)
+
+  const taskNewStatus = (status) => {
+    return nextTaskStatus[status]
+  }
+
+  const handleCheckBoxClick = (taskStatus) => {
+    mutate(
+      {
+        status: taskNewStatus(taskStatus),
+      },
+      {
+        onSuccess: () => toast.success('Task status sucessfully updated'),
+        onError: () => toast.error('Error on updating task'),
+      }
+    )
+  }
+
   return (
     <div className="border-border flex gap-4 border-b p-4">
       <TaskCheckbox
-        id={checkboxId}
+        id={taskId}
         status={status}
-        onToggle={checkboxOnToggle}
+        onToggle={() => handleCheckBoxClick(status)}
       />
       <div className="flex flex-col">
         <div className="flex flex-col">
