@@ -1,0 +1,14 @@
+.delete-modal-enter {
+  opacity: 0;
+}
+.delete-modal-enter-active {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+.delete-modal-exit {
+  opacity: 1;
+}
+.delete-modal-exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
+}
