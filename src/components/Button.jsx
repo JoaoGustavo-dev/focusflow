@@ -11,7 +11,7 @@ const button = tv({
       primary: 'text-main bg-primary-status',
       secondary: 'text-secondary bg-transparent border border-border',
       ghost: 'bg-transparent text-secondary',
-      danger: 'bg-high-priority text-smooth-primary',
+      danger: 'bg-high-priority text-main',
     },
     disabled: {
       true: 'cursor-not-allowed opacity-50 hover:opacity-50',
@@ -25,6 +25,7 @@ const button = tv({
 const Button = ({ children, color = 'primary', size = 'md', ...rest }) => {
   return (
     <button
+      type="button"
       className={button({ color, size, disabled: rest.disabled })}
       {...rest}
     >
