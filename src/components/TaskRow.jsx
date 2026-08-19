@@ -15,6 +15,7 @@ const TaskRow = ({
   title,
   description,
   status,
+  checkBoxStatus,
   sprintId,
   taskId,
   priority,
@@ -24,7 +25,7 @@ const TaskRow = ({
 }) => {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
 
-  const { mutate } = useUpdateTask(sprintId, taskId)
+  const { mutate } = useUpdateTask(taskId)
 
   const { mutate: deleteTask, isPending: deleteTaskLoading } = useDeleteTask(
     sprintId,
@@ -65,12 +66,12 @@ const TaskRow = ({
   }
 
   return (
-    <div className="border-border flex items-start justify-between border-b p-4">
+    <div className="border-border flex items-center justify-between border p-4">
       <div className="flex gap-4">
         <TaskCheckbox
           id={taskId}
-          status={status}
-          onToggle={() => handleCheckBoxClick(status)}
+          status={checkBoxStatus}
+          onToggle={() => handleCheckBoxClick(checkBoxStatus)}
         />
         <div className="flex flex-col">
           <div className="flex flex-col">
