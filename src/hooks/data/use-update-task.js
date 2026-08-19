@@ -3,19 +3,19 @@ import { mutationKeys } from '../../keys/mutationKeys'
 import { queryKeys } from '../../keys/queryKeys'
 import { updateTask } from '../../service/taskService'
 
-export const useUpdateTask = (sprintId, taskId) => {
+export const useUpdateTask = (taskId) => {
   const queryClient = useQueryClient()
 
   return useMutation({
     mutationKey: mutationKeys.updateTask(),
-    mutationFn: (task) => updateTask(sprintId, taskId, task),
+    mutationFn: (task) => updateTask(taskId, task),
     onSuccess: (updatedTask) => {
       queryClient.setQueryData(
-        queryKeys.getOneTask(sprintId, taskId),
+        queryKeys.getOneTask(updatedTask.sprintId, taskId),
         updatedTask
       )
       queryClient.invalidateQueries({
-        queryKey: queryKeys.getAllTasks(sprintId),
+        queryKey: queryKeys.getAllTasks(updatedTask.sprintId),
       })
     },
   })

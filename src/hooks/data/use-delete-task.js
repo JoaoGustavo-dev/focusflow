@@ -8,7 +8,7 @@ export const useDeleteTask = (sprintId, taskId) => {
 
   return useMutation({
     mutationKey: mutationKeys.deleteTask(),
-    mutationFn: () => deleteTask(sprintId, taskId),
+    mutationFn: () => deleteTask(taskId),
 
     onSuccess: () => {
       queryClient.setQueryData(queryKeys.getAllTasks(sprintId), (oldTasks) => {
