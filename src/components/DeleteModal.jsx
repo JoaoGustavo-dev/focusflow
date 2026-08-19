@@ -30,7 +30,7 @@ const DeleteModal = ({
         {/* dialog */}
         <div className="border-border flex flex-col border">
           <div className="bg-high-surface border-b-border flex flex-col gap-1 p-4">
-            <div className="flex gap-2">
+            <div className="flex items-center gap-2">
               <p className="text-high-priority">
                 <DangerIcon />
               </p>
