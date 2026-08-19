@@ -7,8 +7,8 @@ export const getTasks = async (sprintId) => {
   return tasks
 }
 
-export const getTask = async (sprintId, taskId) => {
-  const { data: task } = await api.get(`/sprints/${sprintId}/tasks/${taskId}`)
+export const getTask = async (taskId) => {
+  const { data: task } = await api.get(`/tasks/${taskId}`)
   return task
 }
 
@@ -20,17 +20,12 @@ export const createTask = async (sprintId, task) => {
   return createdTask
 }
 
-export const updateTask = async (sprintId, taskId, task) => {
-  const { data: updatedTask } = await api.patch(
-    `/sprints/${sprintId}/tasks/${taskId}`,
-    task
-  )
+export const updateTask = async (taskId, task) => {
+  const { data: updatedTask } = await api.patch(`/tasks/${taskId}`, task)
   return updatedTask
 }
 
-export const deleteTask = async (sprintId, taskId) => {
-  const { data: deletedTask } = await api.delete(
-    `/sprints/${sprintId}/tasks/${taskId}`
-  )
+export const deleteTask = async (taskId) => {
+  const { data: deletedTask } = await api.delete(`/tasks/${taskId}`)
   return deletedTask
 }
