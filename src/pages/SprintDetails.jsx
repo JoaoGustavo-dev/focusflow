@@ -8,8 +8,13 @@ import Header from '../components/Header'
 import Button from '../components/Button'
 import EditIcon from '../assets/icons/edit.svg?react'
 import ArrowLeftIcon from '../assets/icons/arrow-left.svg?react'
+import TrashIcon from '../assets/icons/trash.svg?react'
 import SprintStatCards from '../components/SprintStatCards'
 import SprintBacklog from '../components/SprintBacklog'
+import { useState } from 'react'
+import DeleteModal from '../components/DeleteModal'
+import { useDeleteSprint } from '../hooks/data/use-delete-sprint'
+import { toast } from 'sonner'
 
 const SprintDetails = () => {
   const { sprintId } = useParams()
@@ -18,6 +23,28 @@ const SprintDetails = () => {
 
   const { data: sprint } = useGetSprint(id)
   const pageBack = useNavigate()
+
+  const [deleteModalIsOpen, setDeleteModalIsOpen] = useState(false)
+  const { mutate: toDelete, isPending: deleteSprintIsPending } =
+    useDeleteSprint(id)
+
+  const handleDeleteClick = () => {
+    return setDeleteModalIsOpen(true)
+  }
+
+  const handleCloseModalClick = () => {
+    return setDeleteModalIsOpen(false)
+  }
+
+  const handleDeleteSprint = () => {
+    toDelete(undefined, {
+      onSuccess: () => {
+        toast.success('Sprint successfully deleted')
+        pageBack(-1)
+      },
+      onError: () => toast.error('Error on deleting sprint'),
+    })
+  }
 
   return (
     <div className="flex flex-col gap-8 p-10">
@@ -41,14 +68,27 @@ const SprintDetails = () => {
           </div>
           <Header title={sprint?.title} description={sprint?.description} />
         </div>
-        <Button color="secondary">
-          <EditIcon /> Editar sprint
-        </Button>
+        <div className="flex gap-2">
+          <Button color="secondary">
+            <EditIcon /> Edit sprint
+          </Button>
+          <Button color="danger" onClick={handleDeleteClick}>
+            <TrashIcon /> Delete sprint
+          </Button>
+        </div>
       </div>
 
       <SprintStatCards id={id} />
 
       <SprintBacklog sprintId={id} />
+      <DeleteModal
+        title="Delete Sprint?"
+        description="This action cannot be undone"
+        isOpen={deleteModalIsOpen}
+        onConfirm={handleDeleteSprint}
+        onClose={handleCloseModalClick}
+        isLoading={deleteSprintIsPending}
+      />
     </div>
   )
 }

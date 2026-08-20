@@ -118,7 +118,7 @@
       "id": "9",
       "sprintId": 3,
       "title": "Criar tela de login",
-      "status": "in-progress",
+      "status": "done",
       "priority": "high",
       "description": "Formulário de login com validação de campos",
       "time": "morning"
@@ -127,7 +127,7 @@
       "id": "10",
       "sprintId": 3,
       "title": "Criar tela de cadastro",
-      "status": "pending",
+      "status": "in-progress",
       "priority": "high",
       "description": "Formulário de cadastro de novo usuário",
       "time": "afternoon"
