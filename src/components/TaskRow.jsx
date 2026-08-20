@@ -25,7 +25,7 @@ const TaskRow = ({
 }) => {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
 
-  const { mutate } = useUpdateTask(taskId)
+  const { mutate } = useUpdateTask(sprintId, taskId)
 
   const { mutate: deleteTask, isPending: deleteTaskLoading } = useDeleteTask(
     sprintId,

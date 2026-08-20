@@ -1,7 +1,7 @@
 {
   "sprints": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Criar sistema de tarefas",
       "startDate": "10/05/2026",
       "endDate": "10/06/2026",
@@ -9,15 +9,15 @@
       "description": "Criar sistema de tarefas baseado em sprints e tarefas"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Configurar o db.json",
       "startDate": "10/05/2026",
       "endDate": "17/06/2026",
-      "status": "done",
+      "status": "pending",
       "description": "Criar db.json para simular api"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Autenticação de usuários",
       "startDate": "18/06/2026",
       "endDate": "30/08/2026",
@@ -25,7 +25,7 @@
       "description": "Implementar login, cadastro e recuperação de senha"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Dashboard e relatórios",
       "startDate": "03/07/2026",
       "endDate": "20/08/2026",
@@ -33,7 +33,7 @@
       "description": "Criar dashboard com gráficos de progresso das sprints"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Ajustes de responsividade",
       "startDate": "21/07/2026",
       "endDate": "05/08/2026",
@@ -43,7 +43,7 @@
   ],
   "tasks": [
     {
-      "id": 1,
+      "id": "1",
       "sprintId": 1,
       "title": "Criar UI do sistema de tarefas",
       "status": "pending",
@@ -52,7 +52,7 @@
       "time": "morning"
     },
     {
-      "id": 2,
+      "id": "2",
       "sprintId": 1,
       "title": "Configurar banco",
       "status": "pending",
@@ -61,16 +61,16 @@
       "time": "afternoon"
     },
     {
-      "id": 3,
+      "id": "3",
       "sprintId": 2,
       "title": "Criar db",
-      "status": "in-progress",
+      "status": "pending",
       "priority": "medium",
       "description": "Configurar o banco de dados a partir do json-server",
       "time": "afternoon"
     },
     {
-      "id": 4,
+      "id": "4",
       "sprintId": 2,
       "title": "Criar baseURL",
       "status": "pending",
@@ -79,16 +79,16 @@
       "time": "evening"
     },
     {
-      "id": 5,
+      "id": "5",
       "sprintId": 1,
       "title": "Criar componente de card de tarefa",
-      "status": "done",
+      "status": "pending",
       "priority": "medium",
       "description": "Componente reutilizável para exibir cada tarefa na listagem",
       "time": "morning"
     },
     {
-      "id": 6,
+      "id": "6",
       "sprintId": 1,
       "title": "Criar filtro por status",
       "status": "pending",
@@ -97,16 +97,16 @@
       "time": "afternoon"
     },
     {
-      "id": 7,
+      "id": "7",
       "sprintId": 2,
       "title": "Popular db.json com dados fake",
-      "status": "done",
+      "status": "pending",
       "priority": "low",
       "description": "Adicionar registros de exemplo para sprints e tasks",
       "time": "morning"
     },
     {
-      "id": 8,
+      "id": "8",
       "sprintId": 2,
       "title": "Configurar CORS no json-server",
       "status": "pending",
@@ -115,7 +115,7 @@
       "time": "evening"
     },
     {
-      "id": 9,
+      "id": "9",
       "sprintId": 3,
       "title": "Criar tela de login",
       "status": "in-progress",
@@ -124,7 +124,7 @@
       "time": "morning"
     },
     {
-      "id": 10,
+      "id": "10",
       "sprintId": 3,
       "title": "Criar tela de cadastro",
       "status": "pending",
@@ -133,7 +133,7 @@
       "time": "afternoon"
     },
     {
-      "id": 11,
+      "id": "11",
       "sprintId": 3,
       "title": "Implementar recuperação de senha",
       "status": "pending",
@@ -142,7 +142,7 @@
       "time": "evening"
     },
     {
-      "id": 12,
+      "id": "12",
       "sprintId": 3,
       "title": "Persistir token no localStorage",
       "status": "pending",
@@ -151,7 +151,7 @@
       "time": "afternoon"
     },
     {
-      "id": 13,
+      "id": "13",
       "sprintId": 4,
       "title": "Criar gráfico de progresso por sprint",
       "status": "pending",
@@ -160,7 +160,7 @@
       "time": "morning"
     },
     {
-      "id": 14,
+      "id": "14",
       "sprintId": 4,
       "title": "Criar cards de resumo (KPIs)",
       "status": "pending",
@@ -169,7 +169,7 @@
       "time": "afternoon"
     },
     {
-      "id": 15,
+      "id": "15",
       "sprintId": 4,
       "title": "Exportar relatório em PDF",
       "status": "pending",
@@ -178,7 +178,7 @@
       "time": "evening"
     },
     {
-      "id": 16,
+      "id": "16",
       "sprintId": 5,
       "title": "Ajustar menu para mobile",
       "status": "pending",
@@ -187,7 +187,7 @@
       "time": "morning"
     },
     {
-      "id": 17,
+      "id": "17",
       "sprintId": 5,
       "title": "Testar em diferentes resoluções",
       "status": "pending",
@@ -196,7 +196,7 @@
       "time": "afternoon"
     },
     {
-      "id": 18,
+      "id": "18",
       "sprintId": 5,
       "title": "Corrigir overflow em tabelas",
       "status": "pending",
@@ -204,5 +204,6 @@
       "description": "Adicionar scroll horizontal em tabelas dentro de telas menores",
       "time": "evening"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
