@@ -37,7 +37,7 @@ const StatCards = () => {
         progress={totalActiveTasks}
       />
       <StatCard
-        title="Active Sprints"
+        title="Current Sprints"
         icon={<SprintsIcon />}
         number={activeSprints}
         color={statusVariants['in-progress']}

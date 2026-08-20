@@ -64,7 +64,7 @@ const ActiveSprintCards = () => {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex justify-between">
-        <p className="text-main font-display text-2xl">Active Sprints</p>
+        <p className="text-main font-display text-2xl">Current Sprints</p>
         <NavLink to="/sprints" className="text-smooth-blue text-base">
           View All Sprints
         </NavLink>
