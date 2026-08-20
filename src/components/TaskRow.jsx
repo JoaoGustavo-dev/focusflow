@@ -27,10 +27,8 @@ const TaskRow = ({
 
   const { mutate } = useUpdateTask(sprintId, taskId)
 
-  const { mutate: deleteTask, isPending: deleteTaskLoading } = useDeleteTask(
-    sprintId,
-    taskId
-  )
+  const { mutate: deleteTask, isPending: deleteTaskLoading } =
+    useDeleteTask(sprintId)
 
   const taskNewStatus = (status) => {
     return nextTaskStatus[status]
@@ -56,10 +54,10 @@ const TaskRow = ({
   }
 
   const handleDeleteTask = () => {
-    deleteTask(undefined, {
+    deleteTask(taskId, {
       onSuccess: () => {
         toast.success('Task successfully deleted')
-        setIsDeleteModalOpen(false)
+        handleCloseModalClick()
       },
       onError: () => toast.error('Error on deleting task'),
     })

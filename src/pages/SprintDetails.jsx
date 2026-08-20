@@ -15,6 +15,8 @@ import { useState } from 'react'
 import DeleteModal from '../components/DeleteModal'
 import { useDeleteSprint } from '../hooks/data/use-delete-sprint'
 import { toast } from 'sonner'
+import { useGetTasks } from '../hooks/data/use-get-tasks'
+import { useDeleteTask } from '../hooks/data/use-delete-task'
 
 const SprintDetails = () => {
   const { sprintId } = useParams()
@@ -28,6 +30,10 @@ const SprintDetails = () => {
   const { mutate: toDelete, isPending: deleteSprintIsPending } =
     useDeleteSprint(id)
 
+  const { data: tasks } = useGetTasks(id)
+
+  const { mutate: deleteTask } = useDeleteTask(id)
+
   const handleDeleteClick = () => {
     return setDeleteModalIsOpen(true)
   }
@@ -39,6 +45,9 @@ const SprintDetails = () => {
   const handleDeleteSprint = () => {
     toDelete(undefined, {
       onSuccess: () => {
+        tasks?.forEach((task) => {
+          deleteTask(task.id)
+        })
         toast.success('Sprint successfully deleted')
         pageBack(-1)
       },
