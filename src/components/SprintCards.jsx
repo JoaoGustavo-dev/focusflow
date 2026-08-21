@@ -10,7 +10,7 @@ import { Fragment } from 'react'
 import EmptyMessage from './EmptyMessage'
 import { Link } from 'react-router-dom'
 
-const SprintCards = ({ activefilter }) => {
+const SprintCards = ({ activefilter, onCreateSprintClick }) => {
   const { data: sprints } = useGetSprints()
   const { data: tasks } = useGetTasks()
 
@@ -86,7 +86,10 @@ const SprintCards = ({ activefilter }) => {
             )
           })}
           <div className="bg-main/10 border-border flex h-[233.500px] w-full flex-col items-center justify-center gap-2 rounded-sm border border-dashed">
-            <button className="bg-secondary flex h-12 w-12 items-center justify-center rounded-[50%] hover:cursor-pointer">
+            <button
+              className="bg-secondary flex h-12 w-12 items-center justify-center rounded-[50%] hover:cursor-pointer"
+              onClick={onCreateSprintClick}
+            >
               <PlusIcon />
             </button>
             <p className="text-secondary text-sm">Create new Sprint</p>
