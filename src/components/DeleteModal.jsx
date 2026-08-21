@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { CSSTransition } from 'react-transition-group'
-import './DeleteModal.css'
+import './Modal.css'
 import { createPortal } from 'react-dom'
 import DangerIcon from '../assets/icons/danger.svg?react'
 import Button from './Button'
@@ -20,7 +20,7 @@ const DeleteModal = ({
       nodeRef={nodeRef}
       in={isOpen}
       timeout={500}
-      classNames="delete-modal"
+      classNames="modal"
       unmountOnExit
     >
       <div
