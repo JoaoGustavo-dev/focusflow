@@ -13,6 +13,9 @@ const Sprints = () => {
   const handleCreateSprintModalClick = () => {
     return setCreateSprintModalIsOpen(true)
   }
+  const handleCreateSprintModalClose = () => {
+    return setCreateSprintModalIsOpen(false)
+  }
 
   return (
     <div className="flex flex-col gap-6 p-10">
@@ -20,7 +23,7 @@ const Sprints = () => {
         <Header title="Sprints" description="Manage your team's work cycles." />
         <Button onClick={handleCreateSprintModalClick}>
           <PlusIcon />
-          Nova Sprint
+          New Sprint
         </Button>
       </div>
 
@@ -30,7 +33,10 @@ const Sprints = () => {
         onCreateSprintClick={handleCreateSprintModalClick}
         activefilter={active}
       />
-      <CreateSprintModal isOpen={createSprintModalIsOpen} />
+      <CreateSprintModal
+        isOpen={createSprintModalIsOpen}
+        onClose={handleCreateSprintModalClose}
+      />
     </div>
   )
 }
