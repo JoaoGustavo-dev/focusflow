@@ -21,7 +21,7 @@ import { useDeleteTask } from '../hooks/data/use-delete-task'
 const SprintDetails = () => {
   const { sprintId } = useParams()
 
-  const id = Number(sprintId)
+  const id = sprintId
 
   const { data: sprint } = useGetSprint(id)
   const pageBack = useNavigate()

@@ -29,9 +29,7 @@ const ActiveSprintCards = () => {
   const firstsSprints = ordenadSprints?.slice(0, 2)
 
   const activeSprintsInformation = firstsSprints?.map((sprint) => {
-    const sprintTasks = tasks?.filter(
-      (task) => task.sprintId === Number(sprint.id)
-    )
+    const sprintTasks = tasks?.filter((task) => task.sprintId === sprint.id)
 
     const doneTasks = sprintTasks?.filter((task) => task.status === 'done')
 

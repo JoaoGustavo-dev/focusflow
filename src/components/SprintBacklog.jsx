@@ -46,7 +46,7 @@ const SprintBacklog = ({ sprintId }) => {
                 description={task?.description}
                 status={statusVariants[task?.status]}
                 checkBoxStatus={task?.status}
-                sprintId={Number(task?.sprintId)}
+                sprintId={task?.sprintId}
                 taskId={task?.id}
                 priority={task?.priority}
                 priorityBadgeTitle={priorityLabels[task?.priority]}

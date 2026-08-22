@@ -17,9 +17,7 @@ const TaskPriorityCards = () => {
   const actualDate = new Date()
 
   const tasksWithSprintInfo = highPriorityTasks?.map((task) => {
-    const sprintsTask = sprints?.find(
-      (sprint) => Number(sprint?.id) === task?.sprintId
-    )
+    const sprintsTask = sprints?.find((sprint) => sprint?.id === task?.sprintId)
 
     if (sprintsTask === undefined) {
       return null

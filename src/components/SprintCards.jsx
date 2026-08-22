@@ -23,9 +23,7 @@ const SprintCards = ({ activefilter, onCreateSprintClick }) => {
   })
 
   const sprintsList = selectedSprints?.map((sprint) => {
-    const totalTasks = tasks?.filter(
-      (task) => task.sprintId === Number(sprint.id)
-    )
+    const totalTasks = tasks?.filter((task) => task.sprintId === sprint.id)
 
     const completedTasks = totalTasks?.filter((task) => task.status === 'done')
 
