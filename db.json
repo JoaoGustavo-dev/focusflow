@@ -39,12 +39,20 @@
       "endDate": "05/08/2026",
       "status": "pending",
       "description": "Adaptar layout para telas mobile e tablet"
+    },
+    {
+      "title": "Otimizar performance do dashboard",
+      "startDate": "05/09/2026",
+      "endDate": "20/09/2026",
+      "status": "pending",
+      "description": "Reduzir tempo de carregamento dos gráficos e cards de estatísticas",
+      "id": "HhuguF-41Gw"
     }
   ],
   "tasks": [
     {
       "id": "1",
-      "sprintId": 1,
+      "sprintId": "1",
       "title": "Criar UI do sistema de tarefas",
       "status": "done",
       "priority": "high",
@@ -53,7 +61,7 @@
     },
     {
       "id": "2",
-      "sprintId": 1,
+      "sprintId": "1",
       "title": "Configurar banco",
       "status": "done",
       "priority": "high",
@@ -62,7 +70,7 @@
     },
     {
       "id": "3",
-      "sprintId": 2,
+      "sprintId": "2",
       "title": "Criar db",
       "status": "pending",
       "priority": "medium",
@@ -71,7 +79,7 @@
     },
     {
       "id": "4",
-      "sprintId": 2,
+      "sprintId": "2",
       "title": "Criar baseURL",
       "status": "pending",
       "priority": "high",
@@ -80,7 +88,7 @@
     },
     {
       "id": "5",
-      "sprintId": 1,
+      "sprintId": "1",
       "title": "Criar componente de card de tarefa",
       "status": "done",
       "priority": "medium",
@@ -89,7 +97,7 @@
     },
     {
       "id": "6",
-      "sprintId": 1,
+      "sprintId": "1",
       "title": "Criar filtro por status",
       "status": "done",
       "priority": "low",
@@ -98,7 +106,7 @@
     },
     {
       "id": "7",
-      "sprintId": 2,
+      "sprintId": "2",
       "title": "Popular db.json com dados fake",
       "status": "pending",
       "priority": "low",
@@ -107,7 +115,7 @@
     },
     {
       "id": "8",
-      "sprintId": 2,
+      "sprintId": "2",
       "title": "Configurar CORS no json-server",
       "status": "pending",
       "priority": "medium",
@@ -116,7 +124,7 @@
     },
     {
       "id": "9",
-      "sprintId": 3,
+      "sprintId": "3",
       "title": "Criar tela de login",
       "status": "done",
       "priority": "high",
@@ -125,7 +133,7 @@
     },
     {
       "id": "10",
-      "sprintId": 3,
+      "sprintId": "3",
       "title": "Criar tela de cadastro",
       "status": "in-progress",
       "priority": "high",
@@ -134,7 +142,7 @@
     },
     {
       "id": "11",
-      "sprintId": 3,
+      "sprintId": "3",
       "title": "Implementar recuperação de senha",
       "status": "pending",
       "priority": "medium",
@@ -143,7 +151,7 @@
     },
     {
       "id": "12",
-      "sprintId": 3,
+      "sprintId": "3",
       "title": "Persistir token no localStorage",
       "status": "pending",
       "priority": "medium",
@@ -152,7 +160,7 @@
     },
     {
       "id": "13",
-      "sprintId": 4,
+      "sprintId": "4",
       "title": "Criar gráfico de progresso por sprint",
       "status": "pending",
       "priority": "medium",
@@ -161,7 +169,7 @@
     },
     {
       "id": "14",
-      "sprintId": 4,
+      "sprintId": "4",
       "title": "Criar cards de resumo (KPIs)",
       "status": "pending",
       "priority": "low",
@@ -170,7 +178,7 @@
     },
     {
       "id": "15",
-      "sprintId": 4,
+      "sprintId": "4",
       "title": "Exportar relatório em PDF",
       "status": "pending",
       "priority": "low",
@@ -179,7 +187,7 @@
     },
     {
       "id": "16",
-      "sprintId": 5,
+      "sprintId": "5",
       "title": "Ajustar menu para mobile",
       "status": "pending",
       "priority": "medium",
@@ -188,7 +196,7 @@
     },
     {
       "id": "17",
-      "sprintId": 5,
+      "sprintId": "5",
       "title": "Testar em diferentes resoluções",
       "status": "pending",
       "priority": "low",
@@ -197,7 +205,7 @@
     },
     {
       "id": "18",
-      "sprintId": 5,
+      "sprintId": "5",
       "title": "Corrigir overflow em tabelas",
       "status": "pending",
       "priority": "medium",
