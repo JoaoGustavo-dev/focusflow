@@ -1,10 +1,8 @@
 import { api } from '../lib/axios'
 
 export const getTasks = async (sprintId) => {
-  const { data: tasks } = await api.get('/tasks', {
-    params: sprintId ? { sprintId } : {},
-  })
-  return tasks
+  const { data: tasks } = await api.get('/tasks')
+  return sprintId ? tasks.filter((task) => task.sprintId === sprintId) : tasks
 }
 
 export const getTask = async (taskId) => {
