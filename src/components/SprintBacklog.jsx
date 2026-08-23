@@ -9,7 +9,7 @@ import { priorityLabels } from '../utils/priorityLabels'
 import { Fragment } from 'react'
 import NoTasks from '../assets/icons/no-tasks.svg?react'
 
-const SprintBacklog = ({ sprintId }) => {
+const SprintBacklog = ({ sprintId, createTask }) => {
   const { data: tasks } = useGetTasks(sprintId)
 
   return (
@@ -21,6 +21,7 @@ const SprintBacklog = ({ sprintId }) => {
           subtitle="Start planning your sprint by adding tasks. Set
           priorities, estimate points, and distribute the work to the
           team."
+          onClick={createTask}
           buttonText={
             <Fragment>
               {' '}
@@ -32,7 +33,7 @@ const SprintBacklog = ({ sprintId }) => {
         <div className="flex flex-col">
           <div className="bg-high-surface flex justify-between p-4">
             <p className="text-main font-display text-2xl">Sprint Backlog</p>
-            <Button>
+            <Button onClick={createTask}>
               <PlusIcon /> New Task
             </Button>
           </div>

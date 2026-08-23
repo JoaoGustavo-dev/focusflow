@@ -17,6 +17,7 @@ import { useDeleteSprint } from '../hooks/data/use-delete-sprint'
 import { toast } from 'sonner'
 import { useGetTasks } from '../hooks/data/use-get-tasks'
 import { useDeleteTask } from '../hooks/data/use-delete-task'
+import CreateTaskModal from '../components/CreateTaskModal'
 
 const SprintDetails = () => {
   const { sprintId } = useParams()
@@ -40,6 +41,14 @@ const SprintDetails = () => {
 
   const handleCloseModalClick = () => {
     return setDeleteModalIsOpen(false)
+  }
+  const [createTaskModalIsOpen, setCreateTaskModalIsOpen] = useState(false)
+
+  const handleCreateTaskClick = () => {
+    return setCreateTaskModalIsOpen(true)
+  }
+  const handleCreateTaskModalClose = () => {
+    return setCreateTaskModalIsOpen(false)
   }
 
   const handleDeleteSprint = () => {
@@ -89,7 +98,7 @@ const SprintDetails = () => {
 
       <SprintStatCards id={id} />
 
-      <SprintBacklog sprintId={id} />
+      <SprintBacklog sprintId={id} createTask={handleCreateTaskClick} />
       <DeleteModal
         title="Delete Sprint?"
         description="This action cannot be undone"
@@ -97,6 +106,13 @@ const SprintDetails = () => {
         onConfirm={handleDeleteSprint}
         onClose={handleCloseModalClick}
         isLoading={deleteSprintIsPending}
+      />
+
+      <CreateTaskModal
+        sprintId={id}
+        isOpen={createTaskModalIsOpen}
+        sprint={sprint?.title}
+        onClose={handleCreateTaskModalClose}
       />
     </div>
   )
