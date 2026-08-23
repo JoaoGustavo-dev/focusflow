@@ -44,7 +44,7 @@
       "title": "Otimizar performance do dashboard",
       "startDate": "05/09/2026",
       "endDate": "20/09/2026",
-      "status": "pending",
+      "status": "in-progress",
       "description": "Reduzir tempo de carregamento dos gráficos e cards de estatísticas",
       "id": "HhuguF-41Gw"
     }
@@ -211,6 +211,24 @@
       "priority": "medium",
       "description": "Adicionar scroll horizontal em tabelas dentro de telas menores",
       "time": "evening"
+    },
+    {
+      "sprintId": "HhuguF-41Gw",
+      "title": "Adicionar tooltip nos cards de prioridade",
+      "description": "Mostrar tooltip explicando o nível de prioridade ao passar o mouse sobre a badge",
+      "status": "pending",
+      "priority": "medium",
+      "time": "afternoon",
+      "id": "jS0FkxEHXv4"
+    },
+    {
+      "sprintId": "HhuguF-41Gw",
+      "title": "Corrigir cache do react-query após delete",
+      "description": "Garantir que o cache invalide corretamente quando uma task é deletada",
+      "status": "in-progress",
+      "priority": "high",
+      "time": "morning",
+      "id": "d-qXBNsCNuI"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
