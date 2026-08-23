@@ -8,7 +8,7 @@ export const useCreateTask = (sprintId) => {
 
   return useMutation({
     mutationKey: mutationKeys.addTask(),
-    mutationFn: (task) => createTask(sprintId, task),
+    mutationFn: (task) => createTask(task),
     onSuccess: (createdTask) => {
       queryClient.setQueryData(queryKeys.getAllTasks(sprintId), (oldTasks) => {
         const taskList = oldTasks ?? []

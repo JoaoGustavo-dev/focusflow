@@ -10,11 +10,8 @@ export const getTask = async (taskId) => {
   return task
 }
 
-export const createTask = async (sprintId, task) => {
-  const { data: createdTask } = await api.post(
-    `/sprints/${sprintId}/tasks`,
-    task
-  )
+export const createTask = async (task) => {
+  const { data: createdTask } = await api.post(`/tasks`, task)
   return createdTask
 }
 
