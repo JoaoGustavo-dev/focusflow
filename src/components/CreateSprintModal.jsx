@@ -73,6 +73,7 @@ const CreateSprintModal = ({ isOpen, onClose }) => {
               <button
                 className="text-main hover:cursor-pointer"
                 onClick={onClose}
+                type="button"
               >
                 <CloseIcon />
               </button>
@@ -160,7 +161,7 @@ const CreateSprintModal = ({ isOpen, onClose }) => {
 
             <div className="bg-high-surface border-border flex justify-between border-b p-4">
               <Button color="ghost" onClick={onClose} type="button">
-                Descartar
+                Discard
               </Button>
               <Button type="submit" disabled={createSprintIsLoading}>
                 <SaveIcon /> Save changes
