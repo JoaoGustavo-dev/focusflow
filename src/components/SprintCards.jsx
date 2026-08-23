@@ -52,6 +52,7 @@ const SprintCards = ({ activefilter, onCreateSprintClick }) => {
           icon={<SprintsIcon width="48px" height="48px" />}
           title="No sprints found"
           subtitle="Start by defining a work cycle for your team."
+          onClick={onCreateSprintClick}
           buttonText={
             <Fragment>
               <PlusIcon /> Create your first sprint
