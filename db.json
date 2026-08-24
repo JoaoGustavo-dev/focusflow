@@ -214,11 +214,11 @@
     },
     {
       "sprintId": "HhuguF-41Gw",
-      "title": "Adicionar tooltip nos cards de prioridade",
-      "description": "Mostrar tooltip explicando o nível de prioridade ao passar o mouse sobre a badge",
-      "status": "pending",
-      "priority": "medium",
-      "time": "afternoon",
+      "title": "Adicionar tooltip nos cards de prioridade v2",
+      "description": "Mostrar tooltip explicando o nível de prioridade ao passar o mouse sobre a badge v2",
+      "status": "done",
+      "priority": "high",
+      "time": "morning",
       "id": "jS0FkxEHXv4"
     },
     {
