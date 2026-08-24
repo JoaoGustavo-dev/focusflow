@@ -18,6 +18,7 @@ import { toast } from 'sonner'
 import { useGetTasks } from '../hooks/data/use-get-tasks'
 import { useDeleteTask } from '../hooks/data/use-delete-task'
 import CreateTaskModal from '../components/CreateTaskModal'
+import EditSprintModal from '../components/EditSprintModal'
 
 const SprintDetails = () => {
   const { sprintId } = useParams()
@@ -49,6 +50,15 @@ const SprintDetails = () => {
   }
   const handleCreateTaskModalClose = () => {
     return setCreateTaskModalIsOpen(false)
+  }
+
+  const [editSprintModalIsOpen, setEditSprintModalIsOpen] = useState(false)
+
+  const handleEditSprintModalClick = () => {
+    return setEditSprintModalIsOpen(true)
+  }
+  const handleEditSprintModalClose = () => {
+    return setEditSprintModalIsOpen(false)
   }
 
   const handleDeleteSprint = () => {
@@ -87,7 +97,7 @@ const SprintDetails = () => {
           <Header title={sprint?.title} description={sprint?.description} />
         </div>
         <div className="flex gap-2">
-          <Button color="secondary">
+          <Button color="secondary" onClick={handleEditSprintModalClick}>
             <EditIcon /> Edit sprint
           </Button>
           <Button color="danger" onClick={handleDeleteClick}>
@@ -114,6 +124,13 @@ const SprintDetails = () => {
         sprint={sprint?.title}
         onClose={handleCreateTaskModalClose}
       />
+      {sprint && (
+        <EditSprintModal
+          isOpen={editSprintModalIsOpen}
+          onClose={handleEditSprintModalClose}
+          sprint={sprint}
+        />
+      )}
     </div>
   )
 }
