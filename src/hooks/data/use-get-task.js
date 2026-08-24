@@ -5,6 +5,6 @@ import { getTask } from '../../service/taskService'
 export const useGetTask = (sprintId, taskId) => {
   return useQuery({
     queryKey: queryKeys.getOneTask(sprintId, taskId),
-    queryFn: () => getTask(sprintId, taskId),
+    queryFn: () => getTask(taskId),
   })
 }
