@@ -41,11 +41,11 @@
       "description": "Adaptar layout para telas mobile e tablet"
     },
     {
-      "title": "Otimizar performance do dashboard",
-      "startDate": "05/09/2026",
-      "endDate": "20/09/2026",
+      "title": "Otimizar performance do dashboard v2",
+      "startDate": "01/09/2026",
+      "endDate": "25/09/2026",
       "status": "in-progress",
-      "description": "Reduzir tempo de carregamento dos gráficos e cards de estatísticas",
+      "description": "Revisado após reunião de sprint planning",
       "id": "HhuguF-41Gw"
     }
   ],

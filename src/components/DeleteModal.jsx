@@ -41,10 +41,10 @@ const DeleteModal = ({
 
           <div className="flex items-end gap-2 p-3">
             <Button color="ghost" onClick={onClose}>
-              Cancelar
+              Cancel
             </Button>
             <Button color="danger" onClick={onConfirm} disabled={isLoading}>
-              Confirmar
+              Confirm
             </Button>
           </div>
         </div>
