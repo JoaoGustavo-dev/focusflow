@@ -9,10 +9,11 @@ import SprintsIcon from '../assets/icons/sprints.svg?react'
 import { Fragment } from 'react'
 import EmptyMessage from './EmptyMessage'
 import { Link } from 'react-router-dom'
+import Skeleton from './Skeleton'
 
 const SprintCards = ({ activefilter, onCreateSprintClick }) => {
-  const { data: sprints } = useGetSprints()
-  const { data: tasks } = useGetTasks()
+  const { data: sprints, isPending: sprintsIsLoading } = useGetSprints()
+  const { data: tasks, isPending: tasksisLoading } = useGetTasks()
 
   const selectedSprints = sprints?.filter((sprint) => {
     if (activefilter === 'all') {
@@ -47,7 +48,16 @@ const SprintCards = ({ activefilter, onCreateSprintClick }) => {
     <div
       className={`${emptyDB ? 'flex items-center justify-center' : emptyFilter ? 'flex items-center justify-center' : 'grid grid-cols-3 gap-4'}`}
     >
-      {emptyDB ? (
+      {sprintsIsLoading || tasksisLoading ? (
+        <Fragment>
+          <Skeleton className="h-58" />
+          <Skeleton className="h-58" />
+          <Skeleton className="h-58" />
+          <Skeleton className="h-58" />
+          <Skeleton className="h-58" />
+          <Skeleton className="h-58" />
+        </Fragment>
+      ) : emptyDB ? (
         <EmptyState
           icon={<SprintsIcon width="48px" height="48px" />}
           title="No sprints found"
