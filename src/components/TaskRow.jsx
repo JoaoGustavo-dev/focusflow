@@ -10,12 +10,15 @@ import { toast } from 'sonner'
 import TrashIcon from '../assets/icons/trash.svg?react'
 import { useState } from 'react'
 import DeleteModal from './DeleteModal'
+import EditIcon from '../assets/icons/edit.svg?react'
+import EditTaskModal from './EditTaskModal'
 
 const TaskRow = ({
   title,
   description,
   status,
   checkBoxStatus,
+  task,
   sprintId,
   taskId,
   priority,
@@ -24,6 +27,7 @@ const TaskRow = ({
   time,
 }) => {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
+  const [isEditTaskModalOpen, setIsEditTaskModalOpen] = useState(false)
 
   const { mutate } = useUpdateTask(sprintId, taskId)
 
@@ -63,6 +67,13 @@ const TaskRow = ({
     })
   }
 
+  const handleEditClick = () => {
+    return setIsEditTaskModalOpen(true)
+  }
+  const handleCloseEditModalClick = () => {
+    return setIsEditTaskModalOpen(false)
+  }
+
   return (
     <div className="border-border flex items-center justify-between border p-4">
       <div className="flex gap-4">
@@ -85,9 +96,14 @@ const TaskRow = ({
         </div>
       </div>
 
-      <Button color="danger" onClick={handleDeleteClick}>
-        <TrashIcon />
-      </Button>
+      <div className="flex gap-3">
+        <Button color="secondary" onClick={handleEditClick}>
+          <EditIcon /> Edit Task
+        </Button>
+        <Button color="danger" onClick={handleDeleteClick}>
+          <TrashIcon />
+        </Button>
+      </div>
       <DeleteModal
         title="Delete Task?"
         description="This action cannot be undone"
@@ -96,6 +112,16 @@ const TaskRow = ({
         onClose={handleCloseModalClick}
         isLoading={deleteTaskLoading}
       />
+
+      {task && (
+        <EditTaskModal
+          isOpen={isEditTaskModalOpen}
+          onClose={handleCloseEditModalClick}
+          sprintId={sprintId}
+          taskId={taskId}
+          task={task}
+        />
+      )}
     </div>
   )
 }
