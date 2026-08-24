@@ -5,10 +5,12 @@ import TaskPriorityCard from './TaskPriorityCard'
 import { statusVariants } from '../utils/statusVariants'
 import { statusLabels } from '../utils/statusLabels'
 import EmptyMessage from './EmptyMessage'
+import Skeleton from './Skeleton'
+import { Fragment } from 'react'
 
 const TaskPriorityCards = () => {
-  const { data: tasks } = useGetTasks()
-  const { data: sprints } = useGetSprints()
+  const { data: tasks, isPending: tasksisLoading } = useGetTasks()
+  const { data: sprints, isPending: sprintsIsLoading } = useGetSprints()
 
   const highPriorityTasks = tasks?.filter(
     (task) => task.status !== 'done' && task.priority === 'high'
@@ -60,7 +62,13 @@ const TaskPriorityCards = () => {
   return (
     <div className="flex flex-col gap-2">
       <p className="font-display text-main text-2xl">High Priority Tasks</p>
-      {selectedTasks?.length === 0 ? (
+      {sprintsIsLoading || tasksisLoading ? (
+        <Fragment>
+          <Skeleton className="h-22" />
+          <Skeleton className="h-22" />
+          <Skeleton className="h-22" />
+        </Fragment>
+      ) : selectedTasks?.length === 0 ? (
         <EmptyMessage
           className="mt-4 text-center"
           message="No high priority tasks at the moment!"

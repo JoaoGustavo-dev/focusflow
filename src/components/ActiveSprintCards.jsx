@@ -6,10 +6,11 @@ import { statusVariants } from '../utils/statusVariants'
 import ActiveSprintCard from './ActiveSprintCard'
 import { NavLink } from 'react-router-dom'
 import EmptyMessage from './EmptyMessage'
+import Skeleton from './Skeleton'
 
 const ActiveSprintCards = () => {
-  const { data: tasks } = useGetTasks()
-  const { data: sprints } = useGetSprints()
+  const { data: tasks, isPending: tasksisLoading } = useGetTasks()
+  const { data: sprints, isPending: sprintsIsLoading } = useGetSprints()
 
   const activeSprints = sprints?.filter((sprint) => sprint.status !== 'done')
 
@@ -67,7 +68,12 @@ const ActiveSprintCards = () => {
           View All Sprints
         </NavLink>
       </div>
-      {activeSprintsInformation?.length === 0 ? (
+      {sprintsIsLoading || tasksisLoading ? (
+        <div className="grid grid-cols-2 gap-4">
+          <Skeleton className="h-48" />
+          <Skeleton className="h-48" />
+        </div>
+      ) : activeSprintsInformation?.length === 0 ? (
         <div className="mt-5 flex justify-center">
           <EmptyMessage message="No active sprints yet!" />
         </div>
