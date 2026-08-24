@@ -8,13 +8,26 @@ import { statusVariants } from '../utils/statusVariants'
 import { priorityLabels } from '../utils/priorityLabels'
 import { Fragment } from 'react'
 import NoTasks from '../assets/icons/no-tasks.svg?react'
+import Skeleton from './Skeleton'
 
 const SprintBacklog = ({ sprintId, createTask }) => {
-  const { data: tasks } = useGetTasks(sprintId)
+  const { data: tasks, isPending: taskIsLoading } = useGetTasks(sprintId)
 
   return (
     <Fragment>
-      {tasks?.length === 0 ? (
+      {taskIsLoading ? (
+        <div className="flex flex-col">
+          <div className="bg-high-surface flex justify-between p-4">
+            <p className="text-main font-display text-2xl">Sprint Backlog</p>
+            <Button onClick={createTask}>
+              <PlusIcon /> New Task
+            </Button>
+          </div>
+          <Skeleton className="h-26 w-377" />
+          <Skeleton className="h-26 w-377" />
+          <Skeleton className="h-26 w-377" />
+        </div>
+      ) : tasks?.length === 0 ? (
         <EmptyState
           icon={<NoTasks />}
           title="No tasks created yet"

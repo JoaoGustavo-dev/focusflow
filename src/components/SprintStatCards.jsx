@@ -3,9 +3,11 @@ import StatCard from '../components/StatCard'
 import PendingIcon from '../assets/icons/pending.svg?react'
 import ActiveIcon from '../assets/icons/active.svg?react'
 import DoneIcon from '../assets/icons/done.svg?react'
+import { Fragment } from 'react'
+import Skeleton from './Skeleton'
 
 const SprintStatCards = ({ id }) => {
-  const { data: tasks } = useGetTasks(id)
+  const { data: tasks, isPending: taskIsLoading } = useGetTasks(id)
 
   const totalTasks = tasks?.length
 
@@ -17,18 +19,29 @@ const SprintStatCards = ({ id }) => {
 
   return (
     <div className="grid grid-cols-4 gap-4">
-      <StatCard title="Total Tasks" number={totalTasks} />
-      <StatCard
-        title="Pending Tasks"
-        icon={<PendingIcon />}
-        number={pendingTasks}
-      />
-      <StatCard
-        title="Active Tasks"
-        icon={<ActiveIcon />}
-        number={inProgressTasks}
-      />
-      <StatCard title="Done Tasks" icon={<DoneIcon />} number={doneTasks} />
+      {taskIsLoading ? (
+        <Fragment>
+          <Skeleton className="h-29" />
+          <Skeleton className="h-29" />
+          <Skeleton className="h-29" />
+          <Skeleton className="h-29" />
+        </Fragment>
+      ) : (
+        <Fragment>
+          <StatCard title="Total Tasks" number={totalTasks} />
+          <StatCard
+            title="Pending Tasks"
+            icon={<PendingIcon />}
+            number={pendingTasks}
+          />
+          <StatCard
+            title="Active Tasks"
+            icon={<ActiveIcon />}
+            number={inProgressTasks}
+          />
+          <StatCard title="Done Tasks" icon={<DoneIcon />} number={doneTasks} />
+        </Fragment>
+      )}
     </div>
   )
 }

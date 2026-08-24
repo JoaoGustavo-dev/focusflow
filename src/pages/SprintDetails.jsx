@@ -19,13 +19,15 @@ import { useGetTasks } from '../hooks/data/use-get-tasks'
 import { useDeleteTask } from '../hooks/data/use-delete-task'
 import CreateTaskModal from '../components/CreateTaskModal'
 import EditSprintModal from '../components/EditSprintModal'
+import Skeleton from '../components/Skeleton'
+import { Fragment } from 'react'
 
 const SprintDetails = () => {
   const { sprintId } = useParams()
 
   const id = sprintId
 
-  const { data: sprint } = useGetSprint(id)
+  const { data: sprint, isPending: sprintIsLoading } = useGetSprint(id)
   const pageBack = useNavigate()
 
   const [deleteModalIsOpen, setDeleteModalIsOpen] = useState(false)
@@ -85,16 +87,29 @@ const SprintDetails = () => {
             <ArrowLeftIcon />
           </button>
           <div className="flex gap-3">
-            <StatusBadge
-              status={statusVariants[sprint?.status]}
-              title={statusLabels[sprint?.status]}
-            />
-            <DateRange
-              startDate={sprint?.startDate}
-              endDate={sprint?.endDate}
-            />
+            {sprintIsLoading ? (
+              <Fragment>
+                <Skeleton className="h-6 w-11" />
+                <Skeleton className="h-6 w-52" />
+              </Fragment>
+            ) : (
+              <Fragment>
+                <StatusBadge
+                  status={statusVariants[sprint?.status]}
+                  title={statusLabels[sprint?.status]}
+                />
+                <DateRange
+                  startDate={sprint?.startDate}
+                  endDate={sprint?.endDate}
+                />
+              </Fragment>
+            )}
           </div>
-          <Header title={sprint?.title} description={sprint?.description} />
+          {sprintIsLoading ? (
+            <Skeleton className="h-18 w-100" />
+          ) : (
+            <Header title={sprint?.title} description={sprint?.description} />
+          )}
         </div>
         <div className="flex gap-2">
           <Button color="secondary" onClick={handleEditSprintModalClick}>
