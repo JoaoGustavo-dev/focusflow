@@ -46,7 +46,7 @@ const SprintCards = ({ activefilter, onCreateSprintClick }) => {
 
   return (
     <div
-      className={`${emptyDB ? 'flex items-center justify-center' : emptyFilter ? 'flex items-center justify-center' : 'grid grid-cols-3 gap-4'}`}
+      className={`${emptyDB ? 'flex items-center justify-center' : emptyFilter ? 'flex items-center justify-center' : 'grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3'}`}
     >
       {sprintsIsLoading || tasksisLoading ? (
         <Fragment>

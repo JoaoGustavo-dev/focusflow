@@ -3,11 +3,12 @@ import Sidebar from '../components/Sidebar'
 
 const Layout = () => {
   return (
-    <div className="bg-background grid h-screen w-screen grid-cols-[16rem_1fr] gap-16">
+    <div className="bg-background grid min-h-screen w-full grid-cols-1 lg:grid-cols-[16rem_minmax(0,1fr)]">
       <Sidebar />
-      <div className="home h-full min-w-0 flex-1 overflow-x-hidden overflow-y-auto p-8">
+
+      <main className="home min-w-0 overflow-x-hidden overflow-y-auto">
         <Outlet />
-      </div>
+      </main>
     </div>
   )
 }

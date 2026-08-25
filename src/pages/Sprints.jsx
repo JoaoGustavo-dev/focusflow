@@ -18,8 +18,8 @@ const Sprints = () => {
   }
 
   return (
-    <div className="flex flex-col gap-6 p-10">
-      <div className="border-border flex items-center justify-between border-b pb-4">
+    <div className="flex min-w-0 flex-col gap-6 p-6 lg:p-8 xl:p-10">
+      <div className="border-border flex flex-col gap-4 border-b pb-4 sm:flex-row sm:items-center sm:justify-between">
         <Header title="Sprints" description="Manage your team's work cycles." />
         <Button onClick={handleCreateSprintModalClick}>
           <PlusIcon />

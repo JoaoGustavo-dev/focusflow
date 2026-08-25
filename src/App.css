@@ -1,9 +1,10 @@
 @import 'tailwindcss';
 
 .home::-webkit-scrollbar {
-  background-color: transparent;
   width: 8px;
+  background-color: transparent;
 }
+
 .home::-webkit-scrollbar-thumb {
   background-color: #a0a0a0;
   border-radius: 16px;
@@ -35,7 +36,21 @@
 }
 
 @layer base {
+  html,
+  body,
+  #root {
+    width: 100%;
+    min-width: 0;
+    min-height: 100%;
+    margin: 0;
+  }
+
   body {
+    min-height: 100vh;
     font-family: var(--font-body);
+  }
+
+  #root {
+    min-height: 100vh;
   }
 }
