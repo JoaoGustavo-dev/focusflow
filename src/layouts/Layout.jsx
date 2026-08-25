@@ -6,7 +6,7 @@ const Layout = () => {
     <div className="bg-background grid min-h-screen w-full grid-cols-1 lg:grid-cols-[16rem_minmax(0,1fr)]">
       <Sidebar />
 
-      <main className="home min-w-0 overflow-x-hidden overflow-y-auto">
+      <main className="min-w-0 overflow-x-hidden overflow-y-auto">
         <Outlet />
       </main>
     </div>
