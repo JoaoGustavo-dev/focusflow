@@ -5,7 +5,7 @@ import TaskPriorityCards from '../components/TaskPriorityCards'
 
 const Home = () => {
   return (
-    <div className="mr-14 flex flex-col gap-10 px-0.5 py-8">
+    <div className="flex flex-col gap-10">
       {/* Header */}
       <div>
         <Header

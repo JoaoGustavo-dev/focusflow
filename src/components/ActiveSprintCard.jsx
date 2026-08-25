@@ -16,8 +16,11 @@ const ActiveSprintCard = ({
   return (
     <Card>
       <div className="flex justify-between">
-        <div className="flex min-w-0 flex-col items-start gap-1.5">
-          <CardTitle title={title} className="text-main text-lg" />
+        <div className="flex min-w-0 flex-col gap-1.5">
+          <CardTitle
+            title={title}
+            className="text-main min-w-0 truncate text-lg"
+          />
           <StatusBadge status={status} title={badgeTitle} />
         </div>
         <div className="flex shrink-0 flex-col items-end">

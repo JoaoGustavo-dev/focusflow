@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants'
 
 const badge = tv({
-  base: 'px-2 py-1 text-[11px] text-center border',
+  base: 'px-2 py-1 text-[11px] text-center border self-start',
   variants: {
     status: {
       active:
