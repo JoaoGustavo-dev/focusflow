@@ -25,7 +25,7 @@ const DeleteModal = ({
     >
       <div
         ref={nodeRef}
-        className="fixed top-0 bottom-0 left-0 flex h-screen w-screen items-center justify-center backdrop-blur"
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur"
       >
         {/* dialog */}
         <div className="border-border flex flex-col border">

@@ -57,11 +57,11 @@ const CreateTaskModal = ({ sprintId, sprint, isOpen, onClose }) => {
     >
       <div
         ref={nodeRef}
-        className="fixed top-0 bottom-0 left-0 flex h-screen w-screen items-center justify-center backdrop-blur"
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur"
       >
         {/* dialog */}
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="border-border flex w-md flex-col rounded-sm border">
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">
+          <div className="border-border flex w-full flex-col rounded-sm border">
             <div className="border-border bg-high-surface flex justify-between border-b px-6 py-5">
               <div className="flex flex-col gap-1">
                 <p className="text-main text-2xl">New Task</p>

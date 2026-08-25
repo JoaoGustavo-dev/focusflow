@@ -77,8 +77,8 @@ const SprintDetails = () => {
   }
 
   return (
-    <div className="flex flex-col gap-8 p-10">
-      <div className="flex items-start justify-between">
+    <div className="flex min-w-0 flex-col gap-8 p-6 lg:p-10">
+      <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
         <div className="flex flex-col gap-2">
           <button
             className="bg-secondary mb-1 self-start rounded-[50%] p-2 hover:cursor-pointer"
@@ -86,7 +86,7 @@ const SprintDetails = () => {
           >
             <ArrowLeftIcon />
           </button>
-          <div className="flex gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             {sprintIsLoading ? (
               <Fragment>
                 <Skeleton className="h-6 w-11" />
@@ -111,7 +111,7 @@ const SprintDetails = () => {
             <Header title={sprint?.title} description={sprint?.description} />
           )}
         </div>
-        <div className="flex gap-2">
+        <div className="flex w-full gap-2 sm:w-auto">
           <Button color="secondary" onClick={handleEditSprintModalClick}>
             <EditIcon /> Edit sprint
           </Button>

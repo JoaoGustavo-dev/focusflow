@@ -29,7 +29,7 @@ const StatCards = () => {
   const totalActiveTasks = (activeTasks / tasks?.length) * 100
 
   return (
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
       {tasksisLoading ? (
         <Fragment>
           <Skeleton className="h-34" />

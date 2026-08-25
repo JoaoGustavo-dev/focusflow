@@ -17,15 +17,15 @@ const SprintBacklog = ({ sprintId, createTask }) => {
     <Fragment>
       {taskIsLoading ? (
         <div className="flex flex-col">
-          <div className="bg-high-surface flex justify-between p-4">
+          <div className="bg-high-surface flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-main font-display text-2xl">Sprint Backlog</p>
             <Button onClick={createTask}>
               <PlusIcon /> New Task
             </Button>
           </div>
-          <Skeleton className="h-26 w-377" />
-          <Skeleton className="h-26 w-377" />
-          <Skeleton className="h-26 w-377" />
+          <Skeleton className="h-26 w-full" />
+          <Skeleton className="h-26 w-full" />
+          <Skeleton className="h-26 w-full" />
         </div>
       ) : tasks?.length === 0 ? (
         <EmptyState
@@ -38,7 +38,7 @@ const SprintBacklog = ({ sprintId, createTask }) => {
           buttonText={
             <Fragment>
               {' '}
-              <PlusIcon /> Crate your first task{' '}
+              <PlusIcon /> Create your first task{' '}
             </Fragment>
           }
         />

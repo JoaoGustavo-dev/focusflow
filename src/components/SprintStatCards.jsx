@@ -18,7 +18,7 @@ const SprintStatCards = ({ id }) => {
   const doneTasks = tasks?.filter((task) => task.status === 'done').length
 
   return (
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
       {taskIsLoading ? (
         <Fragment>
           <Skeleton className="h-29" />

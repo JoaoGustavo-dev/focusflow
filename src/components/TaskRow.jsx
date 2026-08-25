@@ -75,20 +75,20 @@ const TaskRow = ({
   }
 
   return (
-    <div className="border-border flex items-center justify-between border p-4">
-      <div className="flex gap-4">
+    <div className="border-border flex flex-col gap-4 border p-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex min-w-0 gap-4">
         <TaskCheckbox
           id={taskId}
           status={checkBoxStatus}
           onToggle={() => handleCheckBoxClick(checkBoxStatus)}
         />
-        <div className="flex flex-col">
+        <div className="flex min-w-0 flex-col">
           <div className="flex flex-col">
             <p className="text-main text-base">{title}</p>
             <p className="text-secondary text-[12px]">{description}</p>
           </div>
 
-          <div className="flex gap-2 pt-1">
+          <div className="flex flex-wrap gap-2 pt-1">
             <PriorityBadge priority={priority} title={priorityBadgeTitle} />
             <StatusBadge status={status} title={statusBadgeTitle} />
             <TaskTime time={time} />
@@ -96,7 +96,7 @@ const TaskRow = ({
         </div>
       </div>
 
-      <div className="flex gap-3">
+      <div className="flex shrink-0 flex-wrap justify-end gap-2 self-end sm:gap-3 sm:self-auto">
         <Button color="secondary" onClick={handleEditClick}>
           <EditIcon /> Edit Task
         </Button>

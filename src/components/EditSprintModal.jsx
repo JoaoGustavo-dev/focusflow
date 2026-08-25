@@ -72,11 +72,11 @@ const EditSprintModal = ({ isOpen, onClose, sprint }) => {
     >
       <div
         ref={nodeRef}
-        className="fixed top-0 bottom-0 left-0 flex h-screen w-screen items-center justify-center backdrop-blur"
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur"
       >
         {/* dialog */}
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="border-border flex w-120 flex-col rounded-sm border">
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-120">
+          <div className="border-border flex w-full flex-col rounded-sm border">
             <div className="bg-high-surface border-border flex items-center justify-between border-b px-6 py-4">
               <p className="text-main font-display text-2xl">Edit Sprint</p>
               <button
@@ -120,7 +120,7 @@ const EditSprintModal = ({ isOpen, onClose, sprint }) => {
                   },
                 })}
               />
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <Input
                   id="startDate"
                   label="Start Date"
